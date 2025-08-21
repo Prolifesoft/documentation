@@ -34,6 +34,18 @@ class VeresiyeDefteri(models.Model):
     def print_receipt(self):
         return self.env.ref("veresiye_defteri.report_veresiye_receipt").report_action(self)
 
+    def action_open_payment_wizard(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Ödeme Yap',
+            'res_model': 'veresiye.payment.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_ledger_id': self.id},
+        }
+
+
 
 class VeresiyeDefteriLine(models.Model):
     _name = 'veresiye.defteri.line'
