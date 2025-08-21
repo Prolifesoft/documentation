@@ -1,10 +1,10 @@
 {
     'name': 'Veresiye Defteri',
-    'version': '1.0',
+    'version': '17.0.1.0.0',
     'summary': 'Müşteri veresiye takibi',
     'author': 'Your Company',
     'category': 'Accounting',
-    'depends': ['base', 'product'],
+    'depends': ['base', 'product', 'account'],
     'data': [
         'security/ir.model.access.csv',
         'views/ledger_views.xml',
